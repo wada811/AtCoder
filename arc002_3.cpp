@@ -14,12 +14,12 @@ void bubbleSort(int x[], int n){
     }
 }
 
-int check(int num, char cmd[], char L[], char R[]){
+int check(int number, char command[], char L[], char R[]){
     int i;
     int count = 0;
 
-    for(i = 0; i < num; i++){
-        if((cmd[i] == L[0] && cmd[i + 1] == L[1]) || (cmd[i] == R[0] && cmd[i + 1] == R[1])){
+    for(i = 0; i < number; i++){
+        if((command[i] == L[0] && command[i + 1] == L[1]) || (command[i] == R[0] && command[i + 1] == R[1])){
             i++;
         }
         count++;
@@ -29,11 +29,11 @@ int check(int num, char cmd[], char L[], char R[]){
 }
  
 int main(void){
-    int number, i, j, k, l;
+    int number;
     char command[1001];
+    int i, j, k, l;
     char button[4] = {'A', 'B', 'X', 'Y'};
-    char L[2];
-    char R[2];
+    char L[2], R[2];
     int count[256] = {0};
     int index = 0;
  
