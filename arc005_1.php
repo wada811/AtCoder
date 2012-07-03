@@ -1,7 +1,7 @@
 <?php
 fscanf(STDIN, "%d", $n);
-$sentence = trim(fgets(STDIN));
-$words = explode(' ', substr($sentence, 0, strlen($sentence) - 1));
+$sentence = fgets(STDIN);
+$words = explode(' ', str_replace(".", "", $sentence));
 $count = 0;
 foreach($words as $word){
     $count += preg_match('/^(TAKAHASHIKUN|Takahashikun|takahashikun)$/', $word, $match);
