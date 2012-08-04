@@ -10,67 +10,62 @@ $x--;$y--; // for optimizing code
 $auth_code = '';
 for($i = 0; $i < 4; $i++){
     $auth_code .= $table[$y][$x];
-// echo $w.'(x, y)=('.$x.', '.$y.'):'.$table[$y][$x].PHP_EOL;
-    switch($w){
+    change($x, $y, $w);
+    go($x, $y, $w);
+}
+exit($auth_code.PHP_EOL);
+
+function go(&$x, &$y, $direction){
+    switch($direction){
         case 'R':
             $x++;
-            if($x == 8)$w = 'L';
             break;
         case 'L':
             $x--;
-            if($x == 0)$w = 'R';
-           break;
+            break;
         case 'U':
             $y--;
-            if($y == 0)$w = 'D';
             break;
         case 'D':
             $y++;
-            if($y == 8)$w = 'U';
             break;
         case 'RU':
             $x++;$y--;
-            if($x == 8 && $y == 0){
-                $w = 'LD';
-            }elseif($x == 8){
-                $w = 'LU';
-            }elseif($y == 0){
-                $w = 'RD';
-            }
             break;
         case 'RD':
             $x++;$y++;
-            if($x == 8 && $y == 8){
-                $w = 'LU';
-            }elseif($x == 8){
-                $w = 'LD';
-            }elseif($y == 8){
-                $w = 'RU';
-            }
             break;
         case 'LU':
             $x--;$y--;
-            if($x == 0 && $y == 0){
-                $w = 'RD';
-            }elseif($x == 0){
-                $w = 'RU';
-            }elseif($y == 0){
-                $w = 'LD';
-            }
             break;
         case 'LD':
             $x--;$y++;
-            if($x == 0 && $y == 8){
-                $w = 'RU';
-            }elseif($x == 0){
-                $w = 'RD';
-            }elseif($y == 8){
-                $w = 'LU';
-            }
             break;
         default:
             break;
     }
 }
-echo $auth_code.PHP_EOL;
+
+function change($x, $y, &$direction){
+    switch($x){
+        case 0:
+            if(strpos($direction, 'L') !== FALSE)$direction = str_replace('L', 'R', $direction);
+            break;
+        case 8:
+            if(strpos($direction, 'R') !== FALSE)$direction = str_replace('R', 'L', $direction);
+            break;
+        default:
+            break;
+    }
+    switch($y){
+        case 0:
+            if(strpos($direction, 'U') !== FALSE)$direction = str_replace('U', 'D', $direction);
+            break;
+        case 8:
+            if(strpos($direction, 'D') !== FALSE)$direction = str_replace('D', 'U', $direction);
+            break;
+        default:
+            break;
+    }
+}
 ?>
