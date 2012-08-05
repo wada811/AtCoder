@@ -5,15 +5,15 @@ for($i = 0; $i < $n; $i++){
 }
 $Mt = array();
 for($i = 0; $i < $n; $i++){
-    $max = 0;
+    $pos = 0;
     for($j = 0; $j < count($Mt); $j++){
-        $pop = $Mt[$max][count($Mt[$max])-1];
+        $pop = $Mt[$pos][count($Mt[$pos])-1];
         if($pop < $inputs[$i]){
-            $max = $j;
+            $pos = $j;
         }
     }
-    if($Mt[$max][count($Mt[$max])-1] >= $inputs[$i]){
-            $Mt[$max][] = $inputs[$i];
+    if($Mt[$pos][count($Mt[$pos])-1] >= $inputs[$i]){
+            $Mt[$pos][] = $inputs[$i];
     }else{
             $Mt[][] = $inputs[$i];
     }
