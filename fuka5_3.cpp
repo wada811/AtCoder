@@ -1,4 +1,3 @@
-/*
 #include <stdio.h>
 
 int w, h;
@@ -18,7 +17,6 @@ void show(){
 void pour(int x, int y){
     if(x + 1 < w){
         if(grid[y][x] > grid[y][x + 1]){
-//            printf("%d:(%d,%d)‚Í‰E‚æ‚è‘å‚«‚¢\n", spread, y, x);
             grid[y][x + 1]++;
             spread++;
             pour(x + 1, y);
@@ -26,7 +24,6 @@ void pour(int x, int y){
     }
     if(x - 1 >= 0){
         if(grid[y][x] > grid[y][x - 1]){
-//            printf("%d:(%d,%d)‚Í¶‚æ‚è‘å‚«‚¢\n", spread, y, x);
             grid[y][x - 1]++;
             spread++;
             pour(x - 1, y);
@@ -34,7 +31,6 @@ void pour(int x, int y){
     }
     if(y + 1 < h){
         if(grid[y][x] > grid[y + 1][x]){
-//            printf("%d:(%d,%d)‚Í‰º‚æ‚è‘å‚«‚¢\n", spread, y, x);
             grid[y + 1][x]++;
             spread++;
             pour(x, y + 1);
@@ -42,7 +38,6 @@ void pour(int x, int y){
     }
     if(y - 1 >= 0){
         if(grid[y][x] > grid[y - 1][x]){
-//            printf("%d:(%d,%d)‚Íã‚æ‚è‘å‚«‚¢\n", spread, y, x);
             grid[y - 1][x]++;
             spread++;
             pour(x, y - 1);
@@ -77,4 +72,3 @@ int main(){
 
     return 0;
 }
-//*/
