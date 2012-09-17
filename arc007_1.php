@@ -1,6 +1,6 @@
 <?php
-fscanf(STDIN, "%c", $c);
+fscanf(STDIN, "%c", $key);
 fscanf(STDIN, "%s", $string);
-$string = preg_replace("/{$c}/", '', $string);
+$string = str_replace($key, '', $string);
 echo $string.PHP_EOL;
 ?>
