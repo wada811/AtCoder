@@ -1,10 +1,10 @@
 <?php
 fscanf(STDIN, "%d %d", $n, $m);
-for($i = 0; $i < $n; $i++){
-    $cd[] = $i + 1;
-}
 for($i = 0; $i < $m; $i++){
     fscanf(STDIN, "%d", $playlist[]);
+}
+for($i = 0; $i < $n; $i++){
+    $cd[] = $i + 1;
 }
 $now = 0;
 for($i = 0; $i < $m; $i++){
