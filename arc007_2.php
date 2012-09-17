@@ -4,16 +4,16 @@ for($i = 0; $i < $m; $i++){
     fscanf(STDIN, "%d", $playlist[]);
 }
 for($i = 0; $i < $n; $i++){
-    $cd[] = $i + 1;
+    $case[] = $i + 1;
 }
 $now = 0;
 for($i = 0; $i < $m; $i++){
     if($now !== $playlist[$i]){
-        $next = array_search($playlist[$i], $cd);
-        list($cd[$next], $now) = array($now, $cd[$next]);
+        $next = array_search($playlist[$i], $case);
+        list($case[$next], $now) = array($now, $case[$next]);
     }
 }
 for($i = 0; $i < $n; $i++){
-    echo $cd[$i].PHP_EOL;
+    echo $case[$i].PHP_EOL;
 }
 ?>
