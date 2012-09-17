@@ -10,7 +10,7 @@ $now = 0;
 for($i = 0; $i < $m; $i++){
     if($now !== $playlist[$i]){
         $next = array_search($playlist[$i], $cd);
-        $tmp = $now; $now = $cd[$next]; $cd[$next] = $tmp;
+        list($cd[$next], $now) = array($now, $cd[$next]);
     }
 }
 for($i = 0; $i < $n; $i++){
