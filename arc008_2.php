@@ -19,6 +19,6 @@ foreach($name_counts as $key => $name_count){
         break;
     }
 }
-$count = isset($diff) ? max($diff) + 1 : $count;
+$count = isset($count) ? $count : max($diff) + 1;
 echo $count.PHP_EOL;
 ?>
