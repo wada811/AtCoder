@@ -1,10 +1,10 @@
 <?php
 fscanf(STDIN, "%d %d", $n, $m);
-for($i = 0; $i < $n;$i++){
+for($i = 0; $i < $n; $i++){
     $name[] = fgetc(STDIN);
 }
 fgetc(STDIN); // throw line feed code
-for($i = 0; $i < $m;$i++){
+for($i = 0; $i < $m; $i++){
     $kit[] = fgetc(STDIN);
 }
 fgetc(STDIN); // throw line feed code
