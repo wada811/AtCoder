@@ -8,17 +8,17 @@ for($i = 0; $i < $m; $i++){
     $kit[] = fgetc(STDIN);
 }
 fgetc(STDIN); // throw line feed code
-
+ 
 $name_counts = array_count_values($name);
 $kit_counts = array_count_values($kit);
 foreach($name_counts as $key => $name_count){
     if(array_key_exists($key, $kit_counts)){
-        $diff[] = max($name_count - $kit_counts[$key], 0);
+        $counts[] = ceil($name_count / $kit_counts[$key]);
     }else{
         $count = -1;
         break;
     }
 }
-$count = isset($count) ? $count : max($diff) + 1;
+$count = isset($count) ? $count : max($counts);
 echo $count.PHP_EOL;
 ?>
