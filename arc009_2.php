@@ -40,7 +40,7 @@ asort($atCoderNumbers);
 // echos($atCoderNumbers, __LINE__);
 // 40::k: 7 0 2 4 3 8 6 5 1 9
 // 40::v: 1 2 3 4 5 6 7 8 9 20
-// この k で targetNumbers をソート
+// この順の k で targetNumbers を得る
 $results = array();
 $orders = array_keys($atCoderNumbers);
 foreach($orders as $order){
