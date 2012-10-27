@@ -14,7 +14,7 @@ for($i = 0; $i < $n; $i++){
 // targetNumbers の数字をアルファベットに置換
 $alphabets = array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j');
 $numbers = array_keys($alphabets);
-$convertNumbersIntoAlphabets = str_replace($numbers, $alphabets, $targetNumbers);
+$targetAlphabets = str_replace($numbers, $alphabets, $targetNumbers);
 // echos($convertNumbersIntoAlphabets, __LINE__);
 // 18::k: 0 1 2 3 4 5 6 7 8 9
 // 18::v: b c d e f g h i j ba
@@ -28,7 +28,7 @@ for($i = 0, $end = count($cardinalNumbers); $i < $end; $i++){
 // 26::v: a i b d f e j h g c
 // convertNumbersIntoAlphabets を cardinalAlphabets の k に置換
 $numbers = array_keys($cardinalAlphabets);
-$atCoderNumbers = str_replace($cardinalAlphabets, $numbers, $convertNumbersIntoAlphabets);
+$atCoderNumbers = str_replace($cardinalAlphabets, $numbers, $targetAlphabets);
 // echos($atCoderNumbers, __LINE__);
 // 32::k: 0 1 2 3 4 5 6 7 8 9
 // 32::v: 2 9 3 5 4 8 7 1 6 20
