@@ -15,7 +15,7 @@ for($i = 0; $i < $n; $i++){
 $alphabets = array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j');
 $numbers = array_keys($alphabets);
 $targetAlphabets = str_replace($numbers, $alphabets, $targetNumbers);
-// echos($convertNumbersIntoAlphabets, __LINE__);
+// echos($targetAlphabets, __LINE__);
 // 18::k: 0 1 2 3 4 5 6 7 8 9
 // 18::v: b c d e f g h i j ba
 // このアルファベットを cardinalNumbers の順になるようにソート
