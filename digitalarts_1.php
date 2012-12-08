@@ -1,5 +1,5 @@
 <?php
-$sentence = fgets(STDIN);
+$sentence = trim(fgets(STDIN));
 fscanf(STDIN, "%d", $n);
 $filters = array();
 for($i = 0; $i < $n; $i++){
