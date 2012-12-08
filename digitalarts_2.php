@@ -2,7 +2,7 @@
 $password = trim(fgets(STDIN));
 $ascii_a = ord('a') - 1;
 $numbars = array();
-for($i = 0, $count = strlen($password); $i < $count; $i++){
+for($i = 0, $end = strlen($password); $i < $end; $i++){
     $numbars[] = ord($password[$i]) - $ascii_a;
 }
 
@@ -30,9 +30,9 @@ while($answers == $numbars){
     shuffle($answers);
 }
 
-$another_password = array();
+$another_password = '';
 for($i = 0, $count = count($answers); $i < $count; $i++){
-    $another_password[] = chr($answers[$i] + $ascii_a);
+    $another_password .= chr($answers[$i] + $ascii_a);
 }
-echo implode('', $another_password) . PHP_EOL;
+echo $another_password . PHP_EOL;
 ?>
