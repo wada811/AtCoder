@@ -2,7 +2,7 @@
 $password = trim(fgets(STDIN));
 $ascii_a = ord('a') - 1;
 $numbars = array();
-for($i = 0, $end = strlen($password); $i < $end; $i++){
+for($i = 0, $count = strlen($password); $i < $count; $i++){
     $numbars[] = ord($password[$i]) - $ascii_a;
 }
 
