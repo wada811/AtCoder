@@ -1,12 +1,11 @@
 <?php
 // 土日の設定
 $holidays = array();
-for(
-    $date = DateTime::createFromFormat('Y/m/d', '2012/01/01', new DateTimeZone('Asia/Tokyo')),
-    $end = DateTime::createFromFormat('Y/m/d', '2012/12/31', new DateTimeZone('Asia/Tokyo'));
-    $date->diff($end)->format('%R') === '+';
-    $date->add(new DateInterval('P1D'))
-){
+$start = DateTime::createFromFormat('Y/m/d', '2012/01/01', new DateTimeZone('Asia/Tokyo'));
+$end = clone $start;
+$end->add(new DateInterval('P1Y'));
+$period = new DatePeriod($start, new DateInterval('P1D'), $end);
+foreach($period as $date){
     if($date->format('w') === '0' || $date->format('w') === '6'){
         $holidays[$date->format('Y/m/d')] = true;
     }else{
@@ -17,7 +16,7 @@ for(
 fscanf(STDIN, "%d", $n);
 for($i = 0; $i < $n; $i++){
     fscanf(STDIN, "%d/%d", $month, $day);
-    $date = DateTime::createFromFormat('Y/m/d', "2012/{$month}/{$day}", new DateTimeZone('Asia/Tokyo'));
+    $date = DateTime::createFromFormat('Y/n/j', "2012/{$month}/{$day}", new DateTimeZone('Asia/Tokyo'));
     // 振替休日の設定
     while($holidays[$date->format('Y/m/d')]){
         $date->add(new DateInterval('P1D'));
@@ -33,7 +32,7 @@ foreach($holidays as $holiday){
     }else{
         $count = 0;
     }
-    $max = $count > $max ? $count : $max;
+    $max = max($max, $count);
 }
 echo $max . PHP_EOL;
 ?>
