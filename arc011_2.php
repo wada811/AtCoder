@@ -1,5 +1,5 @@
 <?php
-fscanf(STDIN, "%d\n", $n);
+fgets(STDIN);
 $line = trim(fgets(STDIN));
 $line = strtolower($line);
 $words = explode(' ', $line);
